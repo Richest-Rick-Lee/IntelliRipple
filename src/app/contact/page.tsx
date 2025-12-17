@@ -33,7 +33,7 @@ export default function ContactPage() {
               产品介绍
             </Link>
             <Link className="nav-link" href="/culture">
-              创新文化
+              Prajna
             </Link>
             <Link className="nav-link" href="/contact">
               联系我们
@@ -47,7 +47,7 @@ export default function ContactPage() {
             <div className="hero-inner">
               <div>
                 <h1 className="hero-title">
-                  联系我们 <span className="hero-title-gradient">Connect with IntelliRipple</span>
+                  欢迎联系我们 <span className="hero-title-gradient">Connect with IntelliRipple</span>
                 </h1>
                 <p className="hero-desc">
                   如需产品演示、技术对接或合作洽谈，欢迎通过邮箱或电话与我们联系，我们将尽快与您取得联系。
@@ -60,21 +60,25 @@ export default function ContactPage() {
               <div className="product-meta">
                 <h2 className="product-title">联系方式</h2>
               </div>
-              <p className="hero-desc" style={{ marginTop: "0.8rem", whiteSpace: "pre-line" }}>
-                电话：+86 18800110365{"\n\n"}
-                邮箱：intelliripple@gmail.com{"\n\n"}
-                地址：海南省海口市美兰区蓝天街道国兴大道11号国瑞大厦C座东塔14层1402-40室
-              </p>
+              <div className="card-sub">
+                <p className="card-sub-text" style={{ whiteSpace: "pre-line" }}>
+                  电话：+86 18800110365{"\n\n"}
+                  邮箱：intelliripple@gmail.com{"\n\n"}
+                  地址：海南省海口市美兰区蓝天街道国兴大道11号国瑞大厦C座东塔14层1402-40室
+                </p>
+              </div>
             </article>
             <article className="product-card">
               <div className="product-meta">
                 <h2 className="product-title">工作时间</h2>
               </div>
-              <p className="hero-desc" style={{ marginTop: "0.8rem", whiteSpace: "pre-line" }}>
-                周一至周五：9:00 - 18:00{"\n\n"}
-                周六：10:00 - 16:00{"\n\n"}
-                周日：休息
-              </p>
+              <div className="card-sub">
+                <p className="card-sub-text" style={{ whiteSpace: "pre-line" }}>
+                  周一至周五：9:00 - 18:00{"\n\n"}
+                  周六：10:00 - 16:00{"\n\n"}
+                  周日：休息
+                </p>
+              </div>
             </article>
           </section>
         </main>

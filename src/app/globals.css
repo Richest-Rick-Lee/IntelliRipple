@@ -16,7 +16,7 @@ body {
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
-  color: #0f172a;
+  color: #111827; /* 全局文字主色 */
   background: transparent;
   margin: 0;
   padding: 0;
@@ -176,7 +176,7 @@ a {
   gap: 1.6rem;
   align-items: center;
   font-size: 1rem;
-  color: #4b5563;
+  color: #000000;
 }
 
 .nav-link {
@@ -325,7 +325,7 @@ main {
 }
 
 .hero-desc {
-  color: #9ca3af;
+  color: #111827;
   font-size: 0.98rem;
   line-height: 1.7;
   max-width: 32rem;
@@ -542,14 +542,207 @@ main {
   }
 }
 
+.prajna-showcase {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4.2rem; /* 底部留白已加大，保持不变 */
+}
+
+.prajna-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  row-gap: 5.6rem; /* Prajna 每行上下间距再增加一倍 */
+}
+
+@media (max-width: 640px) {
+  .prajna-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .product-card {
   border-radius: 1.2rem;
   padding: 0.9rem;
-  background: radial-gradient(circle at top left, #020617, #020617);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.92),
+    rgba(248, 250, 252, 0.85),
+    rgba(248, 250, 252, 0.7)
+  ); /* 与导航栏相同的背景 */
+  border: 1px solid rgba(148, 163, 184, 0.35);
   box-shadow:
-    0 18px 45px rgba(15, 23, 42, 0.95),
-    0 0 0 1px rgba(15, 23, 42, 0.9);
+    0 16px 32px rgba(15, 23, 42, 0.25),
+    0 0 0 1px rgba(15, 23, 42, 0.15);
+}
+
+/* 关于我们页面信息块 */
+.about-sections {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6.0rem; /* 关于我们各展示窗之间的上下间距再增加一倍 */
+}
+
+/* 使命和愿景的布局 */
+.about-mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.2rem;
+  row-gap: 5.2rem; /* 使命/愿景上下间距再增加一倍 */
+}
+
+@media (max-width: 900px) {
+  .about-mission-vision {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-sub-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .about-sub-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.about-card {
+  border-radius: 1.2rem;
+  padding: 1.1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.92),
+    rgba(248, 250, 252, 0.85),
+    rgba(248, 250, 252, 0.7)
+  ); /* 与导航栏相同的背景 */
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    0 16px 32px rgba(15, 23, 42, 0.25),
+    0 0 0 1px rgba(15, 23, 42, 0.15);
+}
+
+.about-card-full {
+  width: 100%;
+}
+
+.about-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.about-card-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.about-card-title {
+  font-size: 1.25rem; /* 标题字体增大一号 */
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.about-card-text {
+  font-size: 1.05rem; /* 正文字体增大一号 */
+  line-height: 1.7;
+  color: #111827;
+}
+
+/* 使命和愿景的布局容器 */
+.about-mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.2rem;
+  row-gap: 5.2rem;
+}
+
+/* 子窗容器 */
+.about-sub-cards {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.4rem;
+  margin-top: 1.3rem;
+}
+
+.about-sub-card {
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.92),
+    rgba(248, 250, 252, 0.85),
+    rgba(248, 250, 252, 0.7)
+  ); /* 与导航栏相同的背景 */
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  min-height: 220px; /* 子窗统一高度（关于我们） */
+  display: flex;
+  flex-direction: column;
+}
+
+.about-sub-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem; /* 子窗标题增大一号 */
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.about-sub-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.about-sub-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-sub-card-text {
+  font-size: 1.05rem; /* 子窗正文增大一号 */
+  line-height: 1.7;
+  color: #111827;
+}
+
+.about-single-sub {
+  margin-top: 1rem;
+}
+
+.about-single-sub .about-sub-card {
+  width: 100%;
+}
+
+.about-single-sub {
+  margin-top: 1rem;
+}
+
+.about-single-sub .about-sub-card {
+  width: 100%;
+}
+
+.about-sub-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.about-sub-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .product-image-wrapper {
@@ -579,9 +772,62 @@ main {
 }
 
 .product-title {
-  font-size: 1.15rem;
-  color: #e5e7eb;
+  font-size: 1.25rem; /* 展示窗标题字体增大一号 */
+  color: #1f2937;
   font-weight: 600;
+}
+
+/* 通用子窗样式（首页 / 产品介绍 / 联系我们 / Prajna） */
+.card-sub {
+  margin-top: 0.9rem;
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.92),
+    rgba(248, 250, 252, 0.85),
+    rgba(248, 250, 252, 0.7)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  min-height: 260px; /* 默认子窗高度（首页 / 联系我们等） */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-sub-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.card-sub-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #111827;
+}
+
+/* 产品介绍页面子窗高度（文本略多） */
+.products-section .card-sub {
+  min-height: 320px;
+}
+
+/* Prajna 页面子窗布局：同一行的两个子窗高度一致 */
+.prajna-grid .product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.prajna-grid .card-sub {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .about-sub-card,
+  .card-sub {
+    min-height: auto; /* 小屏时恢复自适应高度，避免过高空白 */
+    height: auto;
+  }
 }
 
 .product-tag {
@@ -776,7 +1022,7 @@ main {
 
 .subpage-root .hero-title,
 .subpage-root .hero-desc {
-  color: #f9fafb;
+  color: #111827;
 }
 
 .subpage-root main {
@@ -815,11 +1061,16 @@ main {
 .product-card {
   border-radius: 1.2rem;
   padding: 1.1rem;
-  background: transparent; /* 按需求改为透明背景 */
-  border: 1px solid rgba(248, 250, 252, 0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.92),
+    rgba(248, 250, 252, 0.85),
+    rgba(248, 250, 252, 0.7)
+  ); /* 与导航栏相同的背景 */
+  border: 1px solid rgba(148, 163, 184, 0.35);
   box-shadow:
-    0 18px 35px rgba(15, 23, 42, 0.45),
-    0 0 0 1px rgba(15, 23, 42, 0.6);
+    0 16px 32px rgba(15, 23, 42, 0.25),
+    0 0 0 1px rgba(15, 23, 42, 0.15);
 }
 
 .footer-links {
