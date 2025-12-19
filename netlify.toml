@@ -1,4 +1,4 @@
-[#] Netlify configuration for Next.js (App Router) project
+# Netlify configuration for Next.js (App Router) project
 
 [build]
   command = "npm run build"
@@ -6,5 +6,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-
