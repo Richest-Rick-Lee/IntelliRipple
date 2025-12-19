@@ -1,0 +1,10 @@
+[#] Netlify configuration for Next.js (App Router) project
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+
