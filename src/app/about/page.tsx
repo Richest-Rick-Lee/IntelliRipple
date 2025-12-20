@@ -115,7 +115,7 @@ export default function AboutPage() {
             {/* 核心价值观 - 带6个子窗 */}
             <article className="about-card about-card-full">
               <h2 className="about-card-title">核心价值观（Core Values）</h2>
-              <div className="about-sub-cards">
+              <div className="about-sub-cards about-core-values-cards">
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
                     <span className="about-sub-icon">

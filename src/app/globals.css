@@ -561,7 +561,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 2rem;
-  row-gap: 5.6rem; /* Prajna 每行上下间距再增加一倍 */
+  row-gap: 11.2rem; /* Prajna 每行上下间距再增加一倍（从5.6rem增加到11.2rem） */
 }
 
 @media (max-width: 640px) {
@@ -592,7 +592,7 @@ main {
   padding: 0 1.5rem 3.5rem;
   display: flex;
   flex-direction: column;
-  gap: 6.0rem; /* 关于我们各展示窗之间的上下间距再增加一倍 */
+  gap: 12.0rem; /* 关于我们各展示窗之间的上下间距再增加一倍（从6.0rem增加到12.0rem） */
 }
 
 /* 使命和愿景的布局 */
@@ -609,7 +609,7 @@ main {
   }
   
   .about-sub-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -673,12 +673,17 @@ main {
   row-gap: 5.2rem;
 }
 
-/* 子窗容器 */
+/* 子窗容器 - 默认三列两行 */
 .about-sub-cards {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.4rem;
   margin-top: 1.3rem;
+}
+
+/* 核心价值观子窗 - 桌面端一行六列 */
+.about-core-values-cards {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .about-sub-card {
@@ -814,6 +819,21 @@ main {
   font-size: 1.05rem;
   line-height: 1.7;
   color: #111827;
+}
+
+/* 首页五角星图标样式 */
+.star-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.star-icon svg {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
 }
 
 /* 产品介绍页面子窗高度（文本略多） */
