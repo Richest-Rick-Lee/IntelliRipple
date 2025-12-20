@@ -71,22 +71,33 @@ a {
 
 .page-ripple-orb-left {
   top: 18%;
-  left: 30px;
+  left: 12%;
 }
 
 .page-ripple-orb-right {
   bottom: 20%;
-  right: 30px;
+  right: 12%;
 }
 
 .page-ripple-orb-bottom-left {
   bottom: 10%;
-  left: 10%;
+  left: 18%;
   width: 180px;
   height: 150px;
   opacity: 0.82;
   transform: scale(0.55);
   transform-origin: center;
+}
+
+.page-ripple-orb-top-right {
+  top: 15%;
+  right: 15%;
+}
+
+.page-ripple-orb-center-bottom {
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* 去除左右两侧背景光晕，只保留彩色涟漪描边 */
@@ -545,6 +556,30 @@ main {
   gap: 1.8rem;
 }
 
+/* 为产品展示窗添加延迟动画 */
+.products-section .product-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.products-section .product-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.products-section .product-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.products-section .product-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* 移除动画延迟 */
+.products-section .product-card:nth-child(1),
+.products-section .product-card:nth-child(2),
+.products-section .product-card:nth-child(3),
+.products-section .product-card:nth-child(4) {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 900px) {
   .products-section {
     grid-template-columns: 1fr;
@@ -562,6 +597,38 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 2rem;
   row-gap: 11.2rem; /* Prajna 每行上下间距再增加一倍（从5.6rem增加到11.2rem） */
+}
+
+/* 为 Prajna 展示窗添加延迟动画 */
+.prajna-grid .product-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.prajna-grid .product-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.prajna-grid .product-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.prajna-grid .product-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.prajna-grid .product-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.prajna-grid .product-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* 移除动画延迟 */
+.prajna-grid .product-card:nth-child(1),
+.prajna-grid .product-card:nth-child(2),
+.prajna-grid .product-card:nth-child(3),
+.prajna-grid .product-card:nth-child(4),
+.prajna-grid .product-card:nth-child(5),
+.prajna-grid .product-card:nth-child(6) {
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 640px) {
@@ -583,6 +650,19 @@ main {
   box-shadow:
     0 16px 32px rgba(15, 23, 42, 0.25),
     0 0 0 1px rgba(15, 23, 42, 0.15);
+  /* 动画效果移除，保持静态 */
+  opacity: 1;
+  transform: none;
+  animation: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 悬停动效 */
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.3),
+    0 0 0 1px rgba(15, 23, 42, 0.2);
 }
 
 /* 关于我们页面信息块 */
@@ -593,6 +673,66 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12.0rem; /* 关于我们各展示窗之间的上下间距再增加一倍（从6.0rem增加到12.0rem） */
+}
+
+/* 为关于我们展示窗添加延迟动画 */
+.about-sections .about-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.about-sections .about-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.about-sections .about-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.about-sections .about-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.about-sections .about-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* 移除动画延迟 */
+.about-sections .about-card:nth-child(1),
+.about-sections .about-card:nth-child(2),
+.about-sections .about-card:nth-child(3),
+.about-sections .about-card:nth-child(4),
+.about-sections .about-card:nth-child(5) {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* 为关于我们子窗添加延迟动画 */
+.about-sub-cards .about-sub-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.about-sub-cards .about-sub-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.about-sub-cards .about-sub-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.about-sub-cards .about-sub-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.about-sub-cards .about-sub-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.about-sub-cards .about-sub-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+/* 移除子窗动画延迟 */
+.about-sub-cards .about-sub-card:nth-child(1),
+.about-sub-cards .about-sub-card:nth-child(2),
+.about-sub-cards .about-sub-card:nth-child(3),
+.about-sub-cards .about-sub-card:nth-child(4),
+.about-sub-cards .about-sub-card:nth-child(5),
+.about-sub-cards .about-sub-card:nth-child(6) {
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 /* 使命和愿景的布局 */
@@ -632,6 +772,19 @@ main {
   box-shadow:
     0 16px 32px rgba(15, 23, 42, 0.25),
     0 0 0 1px rgba(15, 23, 42, 0.15);
+  /* 动画效果移除，保持静态 */
+  opacity: 1;
+  transform: none;
+  animation: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 悬停动效 */
+.about-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.3),
+    0 0 0 1px rgba(15, 23, 42, 0.2);
 }
 
 .about-card-full {
@@ -689,16 +842,137 @@ main {
 .about-sub-card {
   border-radius: 0.8rem;
   padding: 1rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(248, 250, 252, 0.92),
-    rgba(248, 250, 252, 0.85),
-    rgba(248, 250, 252, 0.7)
-  ); /* 与导航栏相同的背景 */
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  position: relative;
+  /* 水纹玻璃纹透明效果 - 强制透明背景 */
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow:
+    0 6px 26px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
   min-height: 220px; /* 子窗统一高度（关于我们） */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  /* 动画效果移除，保持静态 */
+  opacity: 1;
+  transform: none;
+  animation: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, backdrop-filter 0.3s ease;
+  /* 优化渲染 */
+  will-change: auto;
+  /* 确保内容在背景层之上 */
+  z-index: 1;
+  /* 创建新的层叠上下文，让子窗独立于父元素 */
+  isolation: isolate;
+}
+
+/* 创建背景层，使用混合模式穿透父元素白色 */
+.about-sub-card::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 70%, rgba(249, 115, 22, 0.06) 0%, transparent 50%);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border-radius: 0.8rem;
+  pointer-events: none;
+  z-index: -1;
+  /* 使用混合模式让白色变透明，但只影响背景 */
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+/* 移除 ::after 背景层，直接使用主元素的 backdrop-filter */
+
+/* 页面加载动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 确保子窗在动画过程中保持透明背景 */
+@keyframes fadeInUpCardSub {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    background: transparent !important;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    background: transparent !important;
+  }
+}
+
+/* 悬停动效 */
+/* 悬停凸起效果 */
+.about-sub-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: transparent !important;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow:
+    0 18px 42px rgba(15, 23, 42, 0.16),
+    0 8px 18px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.about-sub-card:hover::after {
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 70%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+}
+
+/* 水纹纹理层 */
+.about-sub-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 只保留水纹纹理，移除白色渐变 */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.015) 3px,
+      rgba(255, 255, 255, 0.015) 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.015) 3px,
+      rgba(255, 255, 255, 0.015) 6px
+    );
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: normal;
+  z-index: 0;
 }
 
 .about-sub-card-title {
@@ -709,6 +983,8 @@ main {
   font-weight: 600;
   color: #111827;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .about-sub-icon {
@@ -728,6 +1004,8 @@ main {
   font-size: 1.05rem; /* 子窗正文增大一号 */
   line-height: 1.7;
   color: #111827;
+  position: relative;
+  z-index: 2;
 }
 
 .about-single-sub {
@@ -796,16 +1074,110 @@ main {
   margin-top: 0.9rem;
   border-radius: 0.9rem;
   padding: 0.9rem 1rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(248, 250, 252, 0.92),
-    rgba(248, 250, 252, 0.85),
-    rgba(248, 250, 252, 0.7)
-  );
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  position: relative;
+  /* 水纹玻璃纹透明效果 - 强制透明背景 */
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow:
+    0 6px 26px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
   min-height: 260px; /* 默认子窗高度（首页 / 联系我们等） */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  /* 动画效果移除，保持静态 */
+  opacity: 1;
+  transform: none;
+  animation: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, backdrop-filter 0.3s ease;
+  /* 优化渲染 */
+  will-change: auto;
+  /* 确保内容在背景层之上 */
+  z-index: 1;
+  /* 创建新的层叠上下文，让子窗独立于父元素 */
+  isolation: isolate;
+}
+
+/* 创建背景层，使用混合模式穿透父元素白色 */
+.card-sub::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 70%, rgba(249, 115, 22, 0.06) 0%, transparent 50%);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border-radius: 0.9rem;
+  pointer-events: none;
+  z-index: -1;
+  /* 使用混合模式让白色变透明，但只影响背景 */
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+/* 移除 ::after 背景层，直接使用主元素的 backdrop-filter */
+
+/* 悬停凸起效果 */
+.card-sub:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: transparent !important;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow:
+    0 18px 42px rgba(15, 23, 42, 0.16),
+    0 8px 18px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.card-sub:hover::after {
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 70%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+}
+
+/* 水纹纹理层 */
+.card-sub::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 只保留水纹纹理，移除白色渐变 */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.015) 3px,
+      rgba(255, 255, 255, 0.015) 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.015) 3px,
+      rgba(255, 255, 255, 0.015) 6px
+    );
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: normal;
+  z-index: 0;
 }
 
 .card-sub-title {
@@ -813,12 +1185,16 @@ main {
   font-weight: 600;
   color: #111827;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .card-sub-text {
   font-size: 1.05rem;
   line-height: 1.7;
   color: #111827;
+  position: relative;
+  z-index: 2;
 }
 
 /* 首页五角星图标样式 */
@@ -1355,7 +1731,44 @@ main {
 
   /* 涟漪效果移动端优化 */
   .page-ripple-orb {
-    display: none; /* 移动端隐藏背景涟漪效果以提升性能 */
+    display: flex;
+    width: 220px;
+    height: 160px;
+    opacity: 0.8;
+  }
+
+  .page-ripple-orb-left {
+    top: 12%;
+    left: 50%;
+    transform: translate(-60%, 0) scale(0.85);
+  }
+
+  .page-ripple-orb-right {
+    bottom: 18%;
+    right: auto;
+    left: 50%;
+    transform: translate(10%, 0) scale(0.85);
+  }
+
+  .page-ripple-orb-bottom-left {
+    bottom: 6%;
+    left: 50%;
+    width: 160px;
+    height: 130px;
+    transform: translate(-50%, 0) scale(0.65);
+  }
+
+  .page-ripple-orb-top-right {
+    top: 12%;
+    right: auto;
+    left: 50%;
+    transform: translate(20%, 0) scale(0.85);
+  }
+
+  .page-ripple-orb-center-bottom {
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(0.85);
   }
 
   .ripple-shell {

@@ -46,6 +46,20 @@ export default function RootLayout({
             <div className="ripple-ring layer3" />
             <div className="ripple-ring layer4" />
           </div>
+          <div className="page-ripple-orb page-ripple-orb-top-right">
+            <div className="ripple-bg-circle" />
+            <div className="ripple-ring" />
+            <div className="ripple-ring layer2" />
+            <div className="ripple-ring layer3" />
+            <div className="ripple-ring layer4" />
+          </div>
+          <div className="page-ripple-orb page-ripple-orb-center-bottom">
+            <div className="ripple-bg-circle" />
+            <div className="ripple-ring" />
+            <div className="ripple-ring layer2" />
+            <div className="ripple-ring layer3" />
+            <div className="ripple-ring layer4" />
+          </div>
         </div>
         {children}
       </body>
