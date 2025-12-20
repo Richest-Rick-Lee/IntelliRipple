@@ -1,8 +1,8 @@
- "use client";
+"use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect } from "react";
+import Image from "next/image";
+import Nav from "../components/Nav";
 
 export default function ProductsPage() {
   useEffect(() => {
@@ -10,37 +10,7 @@ export default function ProductsPage() {
   }, []);
   return (
     <>
-      <header className="nav-blur">
-        <div className="nav-inner">
-          <Link href="/" className="logo">
-            <Image src="/logo.png" alt="IntelliRipple Logo" width={48} height={48} className="logo-img" />
-            <div className="logo-text-main">
-              <div className="logo-intelli-ripple">
-                <span className="logo-intelli">Intelli</span>
-                <span className="logo-ripple">Ripple</span>
-              </div>
-              <div className="logo-sub-cn">灵漪科技</div>
-            </div>
-          </Link>
-          <nav className="nav-links">
-            <Link className="nav-link" href="/">
-              首页
-            </Link>
-            <Link className="nav-link" href="/about">
-              关于我们
-            </Link>
-            <Link className="nav-link" href="/products">
-              产品介绍
-            </Link>
-            <Link className="nav-link" href="/culture">
-              Prajna
-            </Link>
-            <Link className="nav-link" href="/contact">
-              联系我们
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Nav />
       <div className="subpage-root">
         <main>
           <section className="hero">
