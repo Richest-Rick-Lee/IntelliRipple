@@ -1897,17 +1897,17 @@ main {
 
   .page-ripple-orb-bottom-left {
     bottom: 3%;
-    left: 50%;
+    left: 0;
     width: 180px;
     height: 150px;
-    transform: translate(-50%, 0) scale(0.75);
+    transform: translate(5%, 0) scale(0.75);
   }
 
   .page-ripple-orb-top-right {
     top: 8%;
     right: auto;
-    left: 50%;
-    transform: translate(20%, 0) scale(0.85);
+    left: 0;
+    transform: translate(5%, 0) scale(0.85);
   }
 
   .page-ripple-orb-center-bottom {
