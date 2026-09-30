@@ -888,14 +888,6 @@ main {
   color: #111827;
 }
 
-/* 使命和愿景的布局容器 */
-.about-mission-vision {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 2.2rem;
-  row-gap: 5.2rem;
-}
-
 /* 子窗容器 - 默认三列两行 */
 .about-sub-cards {
   display: grid;
@@ -1816,6 +1808,7 @@ main {
   }
 
   .about-mission-vision {
+    grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
