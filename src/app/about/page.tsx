@@ -2,8 +2,11 @@
 
 import { useEffect } from "react";
 import Nav from "../components/Nav";
+import { useI18n } from "../../i18n/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useI18n();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,10 +20,10 @@ export default function AboutPage() {
             <div className="hero-inner">
               <div>
                 <h1 className="hero-title">
-                  了解我们的企业文化 <span className="hero-title-gradient">Corporate Culture</span>
+                  {t.about.title} <span className="hero-title-gradient">{t.about.titleHighlight}</span>
                 </h1>
                 <p className="hero-desc">
-                  IntelliRipple致力于用 AI 驱动的数据智能和自动化能力，重构企业的业务决策与运营方式。
+                  {t.about.desc}
                 </p>
               </div>
             </div>
@@ -28,16 +31,11 @@ export default function AboutPage() {
           <section className="about-sections">
             {/* 公司简介 - 单独一行居中 */}
             <article className="about-card about-card-full">
-              <h2 className="about-card-title">公司简介（Company Profile）</h2>
+              <h2 className="about-card-title">{t.about.profileTitle}</h2>
               <div className="about-single-sub">
                 <div className="about-sub-card">
-                  <p className="about-sub-card-text">
-                    IntelliRipple（灵漪科技） 是一家以人工智能与社交技术为核心驱动力的全球化科技公司，致力于通过 AI 与社交平台的深度融合，构建一个
-                    “人人可用、人人智能” 的新一代全球数字生态。我们希望让 AI 真正成为社交的中枢神经，让智能社交服务触达每一位用户。我们坚信，智能不应是高高在上的技术孤岛，而应像涟漪一样，从中心扩散，触达世界的每一个角落。
-                  </p>
-                  <p className="about-sub-card-text" style={{ marginTop: "0.6rem" }}>
-                    IntelliRipple 致力于打造以「个人 AI」为中心的智能生态系统，通过安全可信的数据体系、可控透明的算法机制，以及 AI 之间协同进化的能力，让每一位用户都拥有真正属于自己的AI。我们相信，真正有价值的 AI，不是冰冷的工具，而是能够理解个体、连接群体、服务生活的智能伙伴。我们正在构建一个可指数级扩展的智能网络，个人 AI 将成为下一代超级入口。
-                  </p>
+                  <p className="about-sub-card-text">{t.about.profileP1}</p>
+                  <p className="about-sub-card-text" style={{ marginTop: "0.6rem" }}>{t.about.profileP2}</p>
                 </div>
               </div>
             </article>
@@ -67,13 +65,11 @@ export default function AboutPage() {
                     />
                   </svg>
                 </div>
-                <h2 className="about-card-title">使命（Mission）</h2>
+                <h2 className="about-card-title">{t.about.missionTitle}</h2>
                 <div className="about-single-sub">
                   <div className="about-sub-card">
-                    <h3 className="about-sub-card-title">我们的使命</h3>
-                    <p className="about-sub-card-text">
-                      构建全球首个“人机共生”的无界智能生态，让世界不仅可沟通，更可触手可及。通过 AI 赋能至各个热门平台，形成一个完整的智能生态系统。让 AI 真正成为社交的中枢神经，让智能社交与数字生活服务于全球用户。
-                    </p>
+                    <h3 className="about-sub-card-title">{t.about.missionSub}</h3>
+                    <p className="about-sub-card-text">{t.about.missionText}</p>
                   </div>
                 </div>
               </article>
@@ -100,13 +96,11 @@ export default function AboutPage() {
                     />
                   </svg>
                 </div>
-                <h2 className="about-card-title">愿景（Vision）</h2>
+                <h2 className="about-card-title">{t.about.visionTitle}</h2>
                 <div className="about-single-sub">
                   <div className="about-sub-card">
-                    <h3 className="about-sub-card-title">我们的愿景</h3>
-                    <p className="about-sub-card-text">
-                      成为全球领先的 AI 驱动型社交生态系统的构建者，重新定义人们发现内容、连接彼此和互动的方式。打造一个“多语言无界社交宇宙”，让每个用户都能跨越语言与文化边界，自由交流与创作。
-                    </p>
+                    <h3 className="about-sub-card-title">{t.about.visionSub}</h3>
+                    <p className="about-sub-card-text">{t.about.visionText}</p>
                   </div>
                 </div>
               </article>
@@ -114,7 +108,7 @@ export default function AboutPage() {
 
             {/* 核心价值观 - 带6个子窗 */}
             <article className="about-card about-card-full">
-              <h2 className="about-card-title">核心价值观（Core Values）</h2>
+              <h2 className="about-card-title">{t.about.valuesTitle}</h2>
               <div className="about-sub-cards about-core-values-cards">
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -139,9 +133,9 @@ export default function AboutPage() {
                           fill="url(#aboutCoreGradient1)"
                         />
                       </svg>
-                    </span>以人为本
+                    </span>{t.about.values[0].title}
                   </h3>
-                  <p className="about-sub-card-text">反对算法至上，技术服务于人，而非技术绑架。</p>
+                  <p className="about-sub-card-text">{t.about.values[0].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -166,9 +160,9 @@ export default function AboutPage() {
                           fill="url(#aboutCoreGradient2)"
                         />
                       </svg>
-                    </span>尊重隐私
+                    </span>{t.about.values[1].title}
                   </h3>
-                  <p className="about-sub-card-text">抵制数据掠夺，隐私不是成本，而是底线。</p>
+                  <p className="about-sub-card-text">{t.about.values[1].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -193,9 +187,9 @@ export default function AboutPage() {
                           fill="url(#aboutCoreGradient3)"
                         />
                       </svg>
-                    </span>开放协作
+                    </span>{t.about.values[2].title}
                   </h3>
-                  <p className="about-sub-card-text">反对封闭垄断，让智能在连接中不断进化。</p>
+                  <p className="about-sub-card-text">{t.about.values[2].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -220,21 +214,21 @@ export default function AboutPage() {
                           fill="url(#aboutCoreGradient4)"
                         />
                       </svg>
-                    </span>持续创新
+                    </span>{t.about.values[3].title}
                   </h3>
-                  <p className="about-sub-card-text">以创新作为驱动力，解决用户痛点，打造大众创新的企业文化。</p>
+                  <p className="about-sub-card-text">{t.about.values[3].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
                     <span className="about-sub-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="about-open-box-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                           <linearGradient
                             id="aboutCoreGradient5"
-                            x1="0"
-                            y1="2"
-                            x2="24"
-                            y2="22"
+                            x1="2"
+                            y1="3"
+                            x2="22"
+                            y2="20"
                             gradientUnits="userSpaceOnUse"
                           >
                             <stop stopColor="#38bdf8" />
@@ -242,79 +236,19 @@ export default function AboutPage() {
                             <stop offset="1" stopColor="#f97316" />
                           </linearGradient>
                         </defs>
-                        <path
-                          d="M4 10v8l8 4 8-4v-8"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M4 10l8 4 8-4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M12 14v8"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M0 6l4 4 8-4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M0 6l4-4 8 4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M24 6l-4 4-8-4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M24 6l-4-4-8 4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M4 2l8 4 8-4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d="M4 10l8-4 8 4"
-                          stroke="url(#aboutCoreGradient5)"
-                          strokeWidth="1.3"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
+                        <path d="M6.5 10.6 12 7.8 9.2 3.6 3.7 6.4Z" fill="url(#aboutCoreGradient5)" opacity="0.62" />
+                        <path d="M12 7.8 17.5 10.6 20.3 6.4 14.8 3.6Z" fill="url(#aboutCoreGradient5)" opacity="0.48" />
+                        <path d="M6.5 10.6 12 13.4 12 18.8 6.5 16Z" fill="url(#aboutCoreGradient5)" opacity="0.95" />
+                        <path d="M17.5 10.6 12 13.4 12 18.8 17.5 16Z" fill="url(#aboutCoreGradient5)" opacity="0.7" />
+                        <path d="M6.5 10.6 12 7.8 12 10.4 8.6 11.8Z" fill="url(#aboutCoreGradient5)" opacity="0.4" />
+                        <path d="M12 7.8 17.5 10.6 15.4 11.8 12 10.4Z" fill="url(#aboutCoreGradient5)" opacity="0.3" />
+                        <path d="M8.6 11.8 12 10.4 15.4 11.8 12 13Z" fill="url(#aboutCoreGradient5)" opacity="0.58" />
+                        <path d="M12 13.4 6.5 10.6 3.7 13.6 9.2 16.4Z" fill="url(#aboutCoreGradient5)" />
+                        <path d="M17.5 10.6 12 13.4 14.8 16.4 20.3 13.6Z" fill="url(#aboutCoreGradient5)" opacity="0.8" />
                       </svg>
-                    </span>真实透明
+                    </span>{t.about.values[4].title}
                   </h3>
-                  <p className="about-sub-card-text">打破信息茧房，拥抱真实，反对算法操纵与信息不对称。</p>
+                  <p className="about-sub-card-text">{t.about.values[4].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -338,16 +272,16 @@ export default function AboutPage() {
                         <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="url(#aboutCoreGradient6)" strokeWidth="1.5" fill="none" opacity="0.9"/>
                         <circle cx="12" cy="12" r="2" fill="url(#aboutCoreGradient6)" opacity="0.9"/>
                       </svg>
-                    </span>全球视野
+                    </span>{t.about.values[5].title}
                   </h3>
-                  <p className="about-sub-card-text">打破语言巴别塔，推倒信息围墙，语言无界，地域无界，服务无界。</p>
+                  <p className="about-sub-card-text">{t.about.values[5].text}</p>
                 </div>
               </div>
             </article>
 
             {/* 行为准则 - 带6个子窗 */}
             <article className="about-card about-card-full">
-              <h2 className="about-card-title">行为准则（Code of Conduct）</h2>
+              <h2 className="about-card-title">{t.about.conductTitle}</h2>
               <div className="about-sub-cards">
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -372,9 +306,9 @@ export default function AboutPage() {
                         <circle cx="12" cy="12" r="1.5" fill="url(#aboutConductGradient1)" opacity="0.9"/>
                         <circle cx="12" cy="17" r="1.5" fill="url(#aboutConductGradient1)" opacity="0.9"/>
                       </svg>
-                    </span>用户主权
+                    </span>{t.about.conducts[0].title}
                   </h3>
-                  <p className="about-sub-card-text">我们坚持用户对数据的完全控制权，用户是平台的主人，不是流量的奴隶。任何功能的开发都应以"增强用户能力"为前提，而不是"消耗用户时间"。</p>
+                  <p className="about-sub-card-text">{t.about.conducts[0].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -397,9 +331,9 @@ export default function AboutPage() {
                         <path d="M12 2L4 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-8-3z" fill="url(#aboutConductGradient2)" opacity="0.9"/>
                         <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                       </svg>
-                    </span>数据安全
+                    </span>{t.about.conducts[1].title}
                   </h3>
-                  <p className="about-sub-card-text">不出售、不交换、不滥用任何用户隐私数据、信息操纵或灰色变现，持续自我审查与安全审计，保护用户的数据安全就是守护我们的生命线。</p>
+                  <p className="about-sub-card-text">{t.about.conducts[1].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -421,9 +355,9 @@ export default function AboutPage() {
                         </defs>
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#aboutConductGradient3)" opacity="0.9"/>
                       </svg>
-                    </span>开放连接
+                    </span>{t.about.conducts[2].title}
                   </h3>
-                  <p className="about-sub-card-text">我们坚持在安全与合规前提下，保持生态开放性。开放不是失控，而是通过规则化接口实现规模增长。真正的强大，来自连接，而非封闭。</p>
+                  <p className="about-sub-card-text">{t.about.conducts[2].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -447,9 +381,9 @@ export default function AboutPage() {
                         <path d="M12 6l1.5 4.5L18 12l-4.5 1.5L12 18l-1.5-4.5L6 12l4.5-1.5L12 6z" fill="url(#aboutConductGradient4)" opacity="0.6"/>
                         <circle cx="12" cy="12" r="1.5" fill="url(#aboutConductGradient4)" opacity="0.9"/>
                       </svg>
-                    </span>大众创新
+                    </span>{t.about.conducts[3].title}
                   </h3>
-                  <p className="about-sub-card-text">创新不应只属于少数人，鼓励用户参与产品、算法与生态共建，形成持续自增强的创新飞轮。尊重来自社区的创意、经验与反馈，技术的价值，在于被更多人真正用上。</p>
+                  <p className="about-sub-card-text">{t.about.conducts[3].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -474,9 +408,9 @@ export default function AboutPage() {
                           fill="url(#aboutConductGradient5)"
                         />
                       </svg>
-                    </span>技术向善
+                    </span>{t.about.conducts[4].title}
                   </h3>
-                  <p className="about-sub-card-text">技术本身中立，但使用方向必须有价值判断。鼓励技术向善，反对技术霸权，我们坚持透明算法、用户可控、意图对齐的设计原则，反对信息操纵与算法黑箱。</p>
+                  <p className="about-sub-card-text">{t.about.conducts[4].text}</p>
                 </div>
                 <div className="about-sub-card">
                   <h3 className="about-sub-card-title">
@@ -501,9 +435,9 @@ export default function AboutPage() {
                         <path d="M10 12h4l-1 4h-2l-1-4z" fill="url(#aboutConductGradient6)" opacity="0.9"/>
                         <path d="M12 18v4M9 20h6" stroke="url(#aboutConductGradient6)" strokeWidth="1.5" strokeLinecap="round" opacity="0.9"/>
                       </svg>
-                    </span>生态共荣
+                    </span>{t.about.conducts[5].title}
                   </h3>
-                  <p className="about-sub-card-text">万物互联，多方共赢。 从社交到电商，从学习到生活，我们在平台内构建闭环。我们尊重每一位创作者、合作伙伴和普通用户，致力于让每个角色都能在这个生态中找到价值。</p>
+                  <p className="about-sub-card-text">{t.about.conducts[5].text}</p>
                 </div>
               </div>
             </article>
@@ -511,7 +445,7 @@ export default function AboutPage() {
         </main>
         <footer className="footer">
           <div className="footer-inner">
-            <span>©海口灵漪科技有限公司 2026 版权所有</span>
+            <span>{t.footer.copyright}</span>
           </div>
         </footer>
       </div>

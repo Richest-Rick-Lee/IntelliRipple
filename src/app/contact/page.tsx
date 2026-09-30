@@ -2,8 +2,11 @@
 
 import { useEffect } from "react";
 import Nav from "../components/Nav";
+import { useI18n } from "../../i18n/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useI18n();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,10 +19,10 @@ export default function ContactPage() {
             <div className="hero-inner">
               <div>
                 <h1 className="hero-title">
-                  欢迎联系我们 <span className="hero-title-gradient">Connect with IntelliRipple</span>
+                  {t.contact.title} <span className="hero-title-gradient">{t.contact.titleHighlight}</span>
                 </h1>
                 <p className="hero-desc">
-                  如需产品演示、技术对接或合作洽谈，欢迎通过邮箱或电话与我们联系，我们将尽快与您取得联系。
+                  {t.contact.desc}
                 </p>
               </div>
             </div>
@@ -27,25 +30,23 @@ export default function ContactPage() {
           <section className="products-section">
             <article className="product-card">
               <div className="product-meta">
-                <h2 className="product-title">联系方式</h2>
+                <h2 className="product-title">{t.contact.infoTitle}</h2>
               </div>
               <div className="card-sub">
                 <p className="card-sub-text" style={{ whiteSpace: "pre-line" }}>
-                  电话：+86 18800110365{"\n\n"}
-                  邮箱：intelliripple@gmail.com{"\n\n"}
-                  地址：海南省海口市美兰区蓝天街道国兴大道11号国瑞大厦C座东塔14层1402-40室
+                  {t.contact.phoneLabel}{t.contact.phone}{"\n\n"}
+                  {t.contact.emailLabel}{t.contact.email}{"\n\n"}
+                  {t.contact.addressLabel}{t.contact.address}
                 </p>
               </div>
             </article>
             <article className="product-card">
               <div className="product-meta">
-                <h2 className="product-title">工作时间</h2>
+                <h2 className="product-title">{t.contact.hoursTitle}</h2>
               </div>
               <div className="card-sub">
                 <p className="card-sub-text" style={{ whiteSpace: "pre-line" }}>
-                  周一至周五：9:00 - 18:00{"\n\n"}
-                  周六：10:00 - 16:00{"\n\n"}
-                  周日：休息
+                  {t.contact.hours.join("\n\n")}
                 </p>
               </div>
             </article>
@@ -53,7 +54,7 @@ export default function ContactPage() {
         </main>
         <footer className="footer">
           <div className="footer-inner">
-            <span>©海口灵漪科技有限公司 2026 版权所有</span>
+            <span>{t.footer.copyright}</span>
           </div>
         </footer>
       </div>

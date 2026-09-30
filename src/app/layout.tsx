@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
+import Providers from "./components/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className="page-root">
+        <Providers>
         <div className="page-ripples">
           <div className="page-ripple-orb page-ripple-orb-left">
             <div className="ripple-bg-circle" />
@@ -62,6 +64,7 @@ export default function RootLayout({
           </div>
         </div>
         {children}
+        </Providers>
       </body>
     </html>
   );

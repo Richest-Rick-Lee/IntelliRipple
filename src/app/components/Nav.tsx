@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { useI18n } from "../../i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Nav() {
+  const { t } = useI18n();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
@@ -44,7 +47,7 @@ export default function Nav() {
         <Link href="/" className="logo" onClick={closeMobileMenu}>
           <Image 
             src="/logo.png" 
-            alt="IntelliRipple Logo" 
+            alt={t.nav.logoAlt} 
             width={48} 
             height={48} 
             className="logo-img"
@@ -55,35 +58,38 @@ export default function Nav() {
               <span className="logo-intelli">Intelli</span>
               <span className="logo-ripple">Ripple</span>
             </div>
-            <div className="logo-sub-cn">灵漪科技</div>
+            <div className="logo-sub-cn">{t.nav.logoSub}</div>
           </div>
         </Link>
-        <button
-          className={`nav-mobile-toggle ${mobileMenuOpen ? "active" : ""}`}
-          onClick={toggleMobileMenu}
-          aria-label="切换菜单"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav className={`nav-links ${mobileMenuOpen ? "mobile-open" : ""}`}>
-          <Link className="nav-link" href="/" onClick={closeMobileMenu}>
-            首页
-          </Link>
-          <Link className="nav-link" href="/about" onClick={closeMobileMenu}>
-            关于我们
-          </Link>
-          <Link className="nav-link" href="/products" onClick={closeMobileMenu}>
-            产品介绍
-          </Link>
-          <Link className="nav-link" href="/culture" onClick={closeMobileMenu}>
-            Prajna
-          </Link>
-          <Link className="nav-link" href="/contact" onClick={closeMobileMenu}>
-            联系我们
-          </Link>
-        </nav>
+        <div className="nav-right">
+          <nav className={`nav-links ${mobileMenuOpen ? "mobile-open" : ""}`}>
+            <Link className="nav-link" href="/" onClick={closeMobileMenu}>
+              {t.nav.home}
+            </Link>
+            <Link className="nav-link" href="/about" onClick={closeMobileMenu}>
+              {t.nav.about}
+            </Link>
+            <Link className="nav-link" href="/products" onClick={closeMobileMenu}>
+              {t.nav.products}
+            </Link>
+            <Link className="nav-link" href="/culture" onClick={closeMobileMenu}>
+              {t.nav.culture}
+            </Link>
+            <Link className="nav-link" href="/contact" onClick={closeMobileMenu}>
+              {t.nav.contact}
+            </Link>
+          </nav>
+          <LanguageSwitcher />
+          <button
+            className={`nav-mobile-toggle ${mobileMenuOpen ? "active" : ""}`}
+            onClick={toggleMobileMenu}
+            aria-label={t.nav.menuToggle}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </header>
   );
