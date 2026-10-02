@@ -13,7 +13,7 @@ const ja: Dictionary = {
     language: "言語を選択",
   },
   footer: {
-    copyright: "© 海口霊漪科技有限公司 2026 All Rights Reserved.",
+    copyright: "© 霊漪科技有限公司 2026 All Rights Reserved.",
   },
   home: {
     title: "イノベーションが、知のさざ波を起こす",

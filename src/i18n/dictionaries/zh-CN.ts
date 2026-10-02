@@ -13,7 +13,7 @@ const zhCN: Dictionary = {
     language: "选择语言",
   },
   footer: {
-    copyright: "©海口灵漪科技有限公司 2026 版权所有",
+    copyright: "©灵漪科技有限公司 2026 版权所有",
   },
   home: {
     title: "创新激起智能涟漪",

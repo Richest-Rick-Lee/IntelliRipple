@@ -13,7 +13,7 @@ const en: Dictionary = {
     language: "Choose language",
   },
   footer: {
-    copyright: "© Haikou IntelliRipple Technology Co., Ltd. 2026. All rights reserved.",
+    copyright: "© IntelliRipple Technology Co., Ltd. 2026. All rights reserved.",
   },
   home: {
     title: "Innovation Sparks an Intelligent Ripple",

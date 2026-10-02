@@ -13,7 +13,7 @@ const zhTW: Dictionary = {
     language: "選擇語言",
   },
   footer: {
-    copyright: "©海口靈漪科技有限公司 2026 版權所有",
+    copyright: "©靈漪科技有限公司 2026 版權所有",
   },
   home: {
     title: "創新激起智能漣漪",
